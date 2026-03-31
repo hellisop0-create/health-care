@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>services</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <span class="plus-icon">+</span> Health<span>Care</span>
+    </div>
+
+    <input type="checkbox" id="nav-check">
+    <label for="nav-check" class="nav-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <ul class="nav-links">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./finddoc.html">Find a Doctor</a></li>
+      <li><a href="./services.html">Services</a></li>
+      <li><a href="#">Patient Portal</a></li>
+      <li><a href="./appoint.html" class="cta-button">Book Appointment</a></li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+        /* --- RESET --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; line-height: 1.6; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+
+        /* --- HEADER --- */
+        .services-header { text-align: center; margin-bottom: 60px; }
+        .services-header h1 { font-size: 2.8rem; color: #0f172a; margin-bottom: 15px; }
+        .services-header p { color: #64748b; font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+
+        /* --- SERVICES GRID --- */
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+            gap: 30px; 
+        }
+
+        /* --- SERVICE CARD --- */
+        .service-card {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: #3b82f6;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Professional Accent Bar */
+        .service-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 5px;
+            background: #3b82f6;
+            opacity: 0;
+            transition: 0.3s;
+        }
+        .service-card:hover::before { opacity: 1; }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #0f172a;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: #475569;
+            margin-bottom: 20px;
+        }
+
+        /* Feature List */
+        .feature-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        .feature-list li {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        .feature-list li::before {
+            content: "→";
+            color: #3b82f6;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* Button */
+        .btn-service {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #f1f5f9;
+            color: #0f172a;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+        .btn-service:hover {
+            background: #3b82f6;
+            color: #ffffff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .services-header h1 { font-size: 2rem; }
+            .services-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="services-header">
+            <h1>Specialized Departments</h1>
+            <p>Our hospital provides expert care across a wide range of medical fields, utilizing the latest in healthcare innovation.</p>
+        </header>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Cardiology</h3>
+                <p>Comprehensive heart care ranging from preventative screenings to complex interventional surgeries.</p>
+                <ul class="feature-list">
+                    <li>Heart Failure Management</li>
+                    <li>Electrophysiology</li>
+                    <li>Vascular Diagnostics</li>
+                </ul>
+                <a href="#" class="btn-service">Learn More</a>
+            </div>
+
+            <div class="service-card">
+                <h3>Neurology</h3>
+                <p>Advanced treatment for neurological disorders affecting the brain, spinal cord, and nerves.</p>
+                <ul class="feature-list">
+                    <li>Stroke Center</li>
+                    <li>Epilepsy Care</li>
+                    <li>Neuro-Rehabilitation</li>
+                </ul>
+                <a href="#" class="btn-service">Learn More</a>
+            </div>
+
+            <div class="service-card">
+                <h3>Diagnostics</h3>
+                <p>State-of-the-art imaging and laboratory services for precise and rapid medical results.</p>
+                <ul class="feature-list">
+                    <li>MRI & CT Imaging</li>
+                    <li>Digital Radiology</li>
+                    <li>Pathology Services</li>
+                </ul>
+                <a href="#" class="btn-service">Learn More</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+  <div class="footer-container">
+    
+    <div class="footer-col">
+      <h2 class="footer-logo">Health<span>Care</span></h2>
+      <p class="footer-about">
+        Providing world-class healthcare with a focus on compassion, 
+        innovation, and patient-centered excellence since 1998.
+      </p>
+      <div class="emergency-box">
+        <span>Emergency 24/7</span>
+        <a href="tel:911" class="emergency-num">000-123-4567</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Find a Doctor</a></li>
+        <li><a href="#">Our Services</a></li>
+        <li><a href="#">Book Appointment</a></li>
+        <li><a href="#">Patient Portal</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Departments</h3>
+      <ul>
+        <li><a href="#">Cardiology</a></li>
+        <li><a href="#">Neurology</a></li>
+        <li><a href="#">Diagnostics</a></li>
+        <li><a href="#">Pediatrics</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Visit Us</h3>
+      <p>123 Medical Park Drive<br>Healthcare City, HC 56789</p>
+      <p>Email: info@heathcare.com</p>
+      <div class="social-links">
+        <span>Follow us for health tips</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 HealthCare Hospital. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

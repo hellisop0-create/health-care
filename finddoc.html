@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find a doctor</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <span class="plus-icon">+</span> Health<span>Care</span>
+    </div>
+
+    <input type="checkbox" id="nav-check">
+    <label for="nav-check" class="nav-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <ul class="nav-links">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./finddoc.html">Find a Doctor</a></li>
+      <li><a href="./services.html">Services</a></li>
+      <li><a href="#">Patient Portal</a></li>
+      <li><a href="./appoint.html" class="cta-button">Book Appointment</a></li>
+    </ul>
+  </div>
+</nav>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        .container { max-width: 1100px; margin: 0 auto; }
+
+        /* --- HEADER SECTION --- */
+        .page-header { text-align: center; margin-bottom: 50px; }
+        .page-header h1 { font-size: 2.5rem; padding-top: 60px; color: #0f172a; margin-bottom: 10px; }
+        .page-header p { color: #64748b; font-size: 1.1rem; }
+
+        /* --- DIRECTORY LAYOUT --- */
+        .directory-grid { display: grid; grid-template-columns: 280px 1fr; gap: 40px; }
+
+        /* --- SIDEBAR FILTERS --- */
+        .filter-sidebar { background: #ffffff; padding: 24px; border-radius: 16px; border: 1px solid #e2e8f0; height: fit-content; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .filter-sidebar h3 { font-size: 1.1rem; margin-bottom: 20px; color: #0f172a; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; }
+        
+        .filter-group { margin-bottom: 20px; }
+        .filter-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: #475569; }
+        .filter-group select { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; background: #fdfdfd; cursor: pointer; }
+
+        /* --- DOCTOR CARDS (Horizontal Professional) --- */
+        .doctor-card { background: #ffffff; display: flex; padding: 24px; border-radius: 16px; margin-bottom: 24px; border: 1px solid #e2e8f0; transition: transform 0.2s ease; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .doctor-card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); border-color: #3b82f6; }
+
+        .doctor-thumb { width: 140px; height: 140px; border-radius: 12px; overflow: hidden; flex-shrink: 0; }
+        .doctor-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+        .doctor-info { flex-grow: 1; padding-left: 24px; display: flex; flex-direction: column; }
+        .specialty-tag { font-size: 0.75rem; font-weight: 700; color: #3b82f6; text-transform: uppercase; letter-spacing: 0.05em; }
+        .doctor-info h2 { font-size: 1.4rem; color: #0f172a; margin: 4px 0; }
+        .doctor-info .meta { font-size: 0.9rem; color: #64748b; margin-bottom: 12px; }
+        .doctor-info .bio { font-size: 0.95rem; line-height: 1.6; color: #334155; margin-bottom: 20px; }
+
+        /* --- BUTTONS --- */
+        .card-actions { display: flex; gap: 12px; margin-top: auto; }
+        .btn { padding: 10px 20px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 0.9rem; transition: 0.2s; border: none; cursor: pointer; }
+        .btn-primary { background: #0f172a; color: white; }
+        .btn-primary:hover { background: #334155; }
+        .btn-outline { background: transparent; border: 1.5px solid #e2e8f0; color: #475569; }
+        .btn-outline:hover { background: #f8fafc; border-color: #cbd5e1; }
+
+        /* Responsive Fix */
+        @media (max-width: 768px) {
+            .directory-grid { grid-template-columns: 1fr; }
+            .doctor-card { flex-direction: column; text-align: center; }
+            .doctor-info { padding-left: 0; padding-top: 20px; }
+            .doctor-thumb { margin: 0 auto; }
+            .card-actions { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<aside class="filter-sidebar">
+    <h3>Department</h3>
+    <div class="filter-group">
+        <select onchange="filterDoctors(this.value)" style="width: 100%; padding: 10px; border-radius: 8px;">
+            <option value="all">All Departments</option>
+            <option value="cardiology">Cardiology</option>
+            <option value="neurology">Neurology</option>
+        </select>
+    </div>
+</aside>
+
+<div class="doctor-card" data-dept="neurology">
+    <div class="doctor-thumb">
+        <img src="img/neuro.jpg" alt="Dr. anand kumar">
+    </div>
+    <div class="doctor-info">
+        <span class="specialty-tag">Neurology & Neurosurgery</span>
+        <h2>Dr. Anand Kumar, MD, FAAN</h2>
+        <p class="meta">Chief of Neurology • 20+ Years Experience</p>
+        
+        <p class="bio">
+            Dr. Sterling is a board-certified neurologist specializing in the diagnosis and treatment of complex neurological disorders, including epilepsy, multiple sclerosis, and neuro-degenerative diseases. He leads our clinical research team in advanced brain mapping technology.
+        </p>
+
+        <div class="card-actions">
+            <button class="btn btn-outline">View Research</button>
+            <button class="btn btn-primary">Schedule Consultation</button>
+        </div>
+    </div>
+</div>
+
+    <div class="doctor-card" data-dept="cardiology">
+    <div class="doctor-thumb">
+        <img src="img/cardio.jpg" alt="Dr. susan gates">
+    </div>
+    <div class="doctor-info">
+        <span class="specialty-tag">Cardiovascular Medicine</span>
+        <h2>Dr. Susan Gates</h2>
+        <p class="meta">Senior Interventional Cardiologist • 15+ Years Experience</p>
+        
+        <p class="bio">
+            Dr. Susan Gates is a fellow of the American College of Cardiology, specializing in minimally invasive heart procedures and preventative vascular health. He is recognized for his expertise in treating complex coronary artery disease and heart rhythm disorders using state-of-the-art robotic-assisted technology.
+
+        <div class="card-actions">
+            <button class="btn btn-outline">View Research</button>
+            <button class="btn btn-primary">Schedule Consultation</button>
+        </div>
+    </div>
+</div>
+
+<footer class="main-footer">
+  <div class="footer-container">
+    
+    <div class="footer-col">
+      <h2 class="footer-logo">Health<span>Care</span></h2>
+      <p class="footer-about">
+        Providing world-class healthcare with a focus on compassion, 
+        innovation, and patient-centered excellence since 1998.
+      </p>
+      <div class="emergency-box">
+        <span>Emergency 24/7</span>
+        <a href="tel:911" class="emergency-num">000-123-4567</a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Find a Doctor</a></li>
+        <li><a href="#">Our Services</a></li>
+        <li><a href="#">Book Appointment</a></li>
+        <li><a href="#">Patient Portal</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Departments</h3>
+      <ul>
+        <li><a href="#">Cardiology</a></li>
+        <li><a href="#">Neurology</a></li>
+        <li><a href="#">Diagnostics</a></li>
+        <li><a href="#">Pediatrics</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Visit Us</h3>
+      <p>123 Medical Park Drive<br>Healthcare City, HC 56789</p>
+      <p>Email: info@healthcare.com</p>
+      <div class="social-links">
+        <span>Follow us for health tips</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 HealthCare Hospital. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+  </div>
+</footer>
+
+
+<script src="./script.js"></script>
+</body>
+</html>
